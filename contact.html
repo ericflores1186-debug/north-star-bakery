@@ -5,8 +5,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact and Pre-Orders | North Star Bakery</title>
+  
   <meta name="description" content="Send a pre-order request or a general question to North Star Bakery, and find our Bell Street location and hours of operation.">
   <link rel="stylesheet" href="styles.css">
+  
   <script src="scripts.js" defer></script>
   
 </head>
@@ -15,6 +17,7 @@
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
   <header class="site-header">
+    
     <div class="header-inner">
       
       <div class="brand">
@@ -22,10 +25,8 @@
         
         <p class="tagline">Handmade daily on Bell Street since 1998</p>
       </div>
-
-      <nav aria-label="Main">
+  <nav aria-label="Main">
         <ul class="nav-list">
-          
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Breads, Pastries &amp; Cakes</a></li>
           <li><a href="about.html">About Our Bakery</a></li>
@@ -42,24 +43,30 @@
       <!-- Shows the saved pre-order list on every page -->
       <p class="basket-status" data-basket-status hidden>
         <a href="products.html#pre-order-list"><span data-basket-count>0 items</span> saved in your pre-order list</a>
+        
       </p>
     </div>
   </header>
 
   <!-- Screen-reader announcements for list changes -->
+  
   <p class="visually-hidden" role="status" aria-live="polite" data-live-region></p>
 
   <main class="site-main" id="main-content">
     <h1>Contact Us and Request a Pre-Order</h1>
+    
     <p class="lead">Use the form below to reserve items for pickup or to ask a question. We reply within one business day. Cakes and large orders need at least 48 hours' notice. Payment happens at the counter when you pick up, so there is nothing to check out online.</p>
 
     <section class="card">
+      
       <h2>Pre-Order and Inquiry Form</h2>
 
       <!-- JS validation lives in scripts.js. The HTML attributes stay as the no-JS fallback. -->
       <form action="#" method="post" data-contact-form>
+        
         <p class="prefill-notice" data-prefill-notice hidden>
           <span data-prefill-text></span>
+          
           <button class="link-btn" type="button" data-clear-prefill>Clear the item details</button>
         </p>
 
@@ -68,20 +75,26 @@
         <!-- Fieldsets group related inputs so the purpose of each block is announced -->
         <fieldset>
           <legend>Your Contact Information</legend>
+          
           <p class="field">
             <label for="full-name">Full name (required)</label>
             <input type="text" id="full-name" name="full-name" autocomplete="name" maxlength="80" required aria-describedby="full-name-error">
             <span class="field-error" id="full-name-error" role="alert"></span>
+            
           </p>
           <p class="field">
+            
             <label for="email">Email address (required)</label>
             <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="email-error">
             <span class="field-error" id="email-error" role="alert"></span>
+            
           </p>
           <p class="field">
+            
             <label for="phone">Phone number (optional, for cake and large orders)</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter a 10-digit phone number in the format 612-555-0147" aria-describedby="phone-error">
             <span class="field-error" id="phone-error" role="alert"></span>
+            
           </p>
         </fieldset>
 
@@ -92,31 +105,44 @@
           <fieldset>
             <legend>Request type (required)</legend>
             <p class="radio-row">
+              
               <input type="radio" id="type-preorder" name="request-type" value="pre-order" required>
               <label for="type-preorder">Pre-order for pickup</label>
             </p>
+            
             <p class="radio-row">
               <input type="radio" id="type-cake" name="request-type" value="custom-cake">
+              
               <label for="type-cake">Custom cake consultation</label>
             </p>
             <p class="radio-row">
+              
               <input type="radio" id="type-event" name="request-type" value="event">
+              
               <label for="type-event">Event or large group order</label>
             </p>
             <p class="radio-row">
+              
               <input type="radio" id="type-question" name="request-type" value="question">
               <label for="type-question">General question</label>
+              
             </p>
             <span class="field-error" id="request-type-error" role="alert"></span>
           </fieldset>
 
           <p class="field">
             <label for="pickup-date">Preferred pickup date (required)</label>
+            
             <input type="date" id="pickup-date" name="pickup-date" min="2026-09-08" required aria-describedby="pickup-date-error">
             <span class="field-error" id="pickup-date-error" role="alert"></span>
+
+
+
+            
           </p>
           <p class="field">
             <label for="item-details">Item details: what you would like and how many (required)</label>
+            
             <textarea id="item-details" name="item-details" rows="5" cols="45" minlength="10" maxlength="600" required aria-describedby="item-details-error"></textarea>
             <span class="field-error" id="item-details-error" role="alert"></span>
           </p>
@@ -128,9 +154,12 @@
             <label for="allergy-notes">Allergy notes, if applicable (optional)</label>
             <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="45" maxlength="300"></textarea>
           </p>
+          
           <p class="note">Our kitchen handles wheat, dairy, eggs, tree nuts, and peanuts daily, so we cannot guarantee an allergen-free item. Tell us what to watch for and we will be honest about what is safe.</p>
         </fieldset>
 
+
+        
         <p class="form-actions">
           <button class="btn-primary" type="submit">Send Pre-Order Request</button>
           <button class="btn-secondary" type="reset">Clear Form</button>
@@ -151,27 +180,25 @@
           Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
         </address>
         
-        <p>We are on the corner of Bell Street and 4th Avenue, one block from the Route 6 bus stop. Street parking is free after 9:00 a.m., and the front entrance is step-free.</p>
-      </section>
+    <p>We are on the corner of Bell Street and 4th Avenue, one block from the Route 6 bus stop. Street parking is free after 9:00 a.m., and the front entrance is step-free.</p>
+   </section>
 
-      <section class="card">
-        <h2>Hours of Operation</h2>
-        <ul class="hours-list">
+   <section class="card">
+    <h2>Hours of Operation</h2>
+     <ul class="hours-list">
           
-          <li>Tuesday to Friday: 6:30 a.m. to 6:00 p.m.</li>
+      <li>Tuesday to Friday: 6:30 a.m. to 6:00 p.m.</li>
           
-          <li>Saturday: 7:00 a.m. to 4:00 p.m.</li>
-          <li>Sunday: 7:00 a.m. to 1:00 p.m.</li>
+      <li>Saturday: 7:00 a.m. to 4:00 p.m.</li>
+      <li>Sunday: 7:00 a.m. to 1:00 p.m.</li>
           
-          <li>Monday: closed for milling and prep</li>
-        </ul>
-        <p class="note">Pre-order pickups are held at the front counter until closing on your chosen date.</p>
-      </section>
+       <li>Monday: closed for milling and prep</li>
+     </ul>
+    <p class="note">Pre-order pickups are held at the front counter until closing on your chosen date.</p>
+   </section>
     </div>
   </main>
-
   <footer class="site-footer">
-    
     <div class="footer-inner">
       <p>North Star Bakery, 412 Bell Street, Minneapolis, MN 55414. Phone: <a href="tel:+16125550147">612-555-0147</a></p>
       <p>&copy; 2026 North Star Bakery. Baked by hand, shared with neighbors.</p>
