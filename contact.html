@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact and Pre-Orders | North Star Bakery</title>
   <meta name="description" content="Send a pre-order request or a general question to North Star Bakery, and find our Bell Street location and hours of operation.">
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 
 <body>
@@ -13,19 +15,28 @@
 
   <header class="site-header">
     <div class="header-inner">
+      
       <div class="brand">
         <img src="bakery-logo_c.png" alt="North Star Bakery logo: a line drawing of a loaf filled with wheat stalks, above the words North Star Bakery" width="1667" height="1423">
+        
         <p class="tagline">Handmade daily on Bell Street since 1998</p>
       </div>
 
       <nav aria-label="Main">
         <ul class="nav-list">
+          
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Breads, Pastries &amp; Cakes</a></li>
           <li><a href="about.html">About Our Bakery</a></li>
           <li><a href="contact.html" aria-current="page">Contact &amp; Pre-Orders</a></li>
-        </ul>
-      </nav>
+
+
+
+
+
+          
+ </ul>
+   </nav>
     </div>
   </header>
 
@@ -39,16 +50,20 @@
       <form action="#" method="post">
         <!-- Fieldsets group related inputs so the purpose of each block is announced -->
         <fieldset>
-          <legend>Your Contact Information</legend>
-          <p class="field">
+      <legend>Your Contact Information</legend>
+       <p class="field">
+         
             <label for="full-name">Full name (required)</label>
+         
             <input type="text" id="full-name" name="full-name" autocomplete="name" maxlength="80" required>
           </p>
           <p class="field">
             <label for="email">Email address (required)</label>
             <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required>
+            
           </p>
           <p class="field">
+            
             <label for="phone">Phone number (optional, for cake and large orders)</label>
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter a 10-digit phone number in the format 612-555-0147">
           </p>
@@ -59,21 +74,25 @@
 
           <!-- Nested fieldset keeps the radio group labeled as one question -->
           <fieldset>
+            
             <legend>Request type (required)</legend>
             <p class="radio-row">
               <input type="radio" id="type-preorder" name="request-type" value="pre-order" required>
               <label for="type-preorder">Pre-order for pickup</label>
             </p>
+
+            
             <p class="radio-row">
               <input type="radio" id="type-cake" name="request-type" value="custom-cake">
               <label for="type-cake">Custom cake consultation</label>
             </p>
+            
             <p class="radio-row">
               <input type="radio" id="type-event" name="request-type" value="event">
               <label for="type-event">Event or large group order</label>
             </p>
             <p class="radio-row">
-              <input type="radio" id="type-question" name="request-type" value="question">
+           <input type="radio" id="type-question" name="request-type" value="question">
               <label for="type-question">General question</label>
             </p>
           </fieldset>
@@ -92,22 +111,25 @@
           <legend>Allergy and Dietary Notes</legend>
           <p class="field">
             <label for="allergy-notes">Allergy notes, if applicable (optional)</label>
+            
             <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="45" maxlength="300"></textarea>
+            
           </p>
           <p class="note">Our kitchen handles wheat, dairy, eggs, tree nuts, and peanuts daily, so we cannot guarantee an allergen-free item. Tell us what to watch for and we will be honest about what is safe.</p>
         </fieldset>
 
         <p class="form-actions">
-          <button class="btn-primary" type="submit">Send Pre-Order Request</button>
-          <button class="btn-secondary" type="reset">Clear Form</button>
+    <button class="btn-primary" type="submit">Send Pre-Order Request</button>
+  <button class="btn-secondary" type="reset">Clear Form</button>
         </p>
-      </form>
+     </form>
     </section>
 
     <!-- Location and hours stack under the form on phones, sit side by side on wider screens -->
     <div class="info-columns">
       <section class="card">
         <h2>Visit the Bakery</h2>
+        
         <address>
           North Star Bakery<br>
           412 Bell Street<br>
@@ -115,15 +137,19 @@
           Phone: <a href="tel:+16125550147">612-555-0147</a><br>
           Email: <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a>
         </address>
+        
         <p>We are on the corner of Bell Street and 4th Avenue, one block from the Route 6 bus stop. Street parking is free after 9:00 a.m., and the front entrance is step-free.</p>
       </section>
 
       <section class="card">
         <h2>Hours of Operation</h2>
         <ul class="hours-list">
+          
           <li>Tuesday to Friday: 6:30 a.m. to 6:00 p.m.</li>
+          
           <li>Saturday: 7:00 a.m. to 4:00 p.m.</li>
           <li>Sunday: 7:00 a.m. to 1:00 p.m.</li>
+          
           <li>Monday: closed for milling and prep</li>
         </ul>
         <p class="note">Pre-order pickups are held at the front counter until closing on your chosen date.</p>
@@ -132,6 +158,7 @@
   </main>
 
   <footer class="site-footer">
+    
     <div class="footer-inner">
       <p>North Star Bakery, 412 Bell Street, Minneapolis, MN 55414. Phone: <a href="tel:+16125550147">612-555-0147</a></p>
       <p>&copy; 2026 North Star Bakery. Baked by hand, shared with neighbors.</p>
