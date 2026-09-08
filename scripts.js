@@ -7,6 +7,10 @@
 
 // Array 1: the counter menu. Each id matches a data-product-id in products.html.
 const PRODUCTS = [
+
+
+
+   
   { id: "sig-loaf", name: "Signature North Star Loaf", price: 8.0, category: "breads" },
   { id: "country-white", name: "Country white sandwich pan loaf", price: 6.5, category: "breads" },
   { id: "seeded-rye", name: "Seeded rye and caraway", price: 7.25, category: "breads" },
@@ -21,13 +25,22 @@ const PRODUCTS = [
   { id: "cake-8", name: "8 inch round cake", price: 48.0, category: "cakes", estimate: true },
   { id: "cake-sheet", name: "Quarter sheet cake", price: 65.0, category: "cakes", estimate: true },
   { id: "cupcakes", name: "Cupcakes, by the dozen", price: 30.0, category: "cakes", estimate: true }
+
+
+
+
+   
 ];
 
 // Array 2: the filter buttons built on the products page.
 const CATEGORIES = [
+   
   { id: "all", label: "Everything" },
+   
   { id: "breads", label: "Breads" },
+   
   { id: "pastries", label: "Pastries" },
+   
   { id: "cakes", label: "Cakes" }
 ];
 
@@ -40,7 +53,7 @@ const FIELD_RULES = [
   },
   {
     id: "email",
-    check: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()),
+      check: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()),
     message: "Enter a valid email address, for example name@example.com."
   },
   {
@@ -52,19 +65,24 @@ const FIELD_RULES = [
   {
     id: "pickup-date",
     check: (value) => value !== "" && value >= todayAsInputValue(),
+     
     message: "Choose a pickup date of today or later."
   },
   {
     id: "item-details",
     check: (value) => value.trim().length >= 10,
+     
     message: "Tell us what you would like and how many (at least 10 characters)."
   }
 ];
 
 // Object: every storage key in one place.
 const STORAGE_KEYS = {
+   
   basket: "nsb-basket",
+   
   filter: "nsb-filter",
+   
   customer: "nsb-customer"
 };
 
@@ -74,7 +92,9 @@ const STORAGE_KEYS = {
 function readStore(key, fallback) {
   try {
     const raw = window.localStorage.getItem(key);
+     
     return raw === null ? fallback : JSON.parse(raw);
+     
   } catch (err) {
     return fallback;
   }
@@ -96,12 +116,14 @@ function findProduct(id) {
 
 function getBasket() {
   const saved = readStore(STORAGE_KEYS.basket, []);
+   
   return Array.isArray(saved) ? saved : [];
 }
 
 // Join saved ids to the menu, dropping anything no longer sold.
 function getBasketLines() {
   return getBasket()
+     
     .map((line) => ({ product: findProduct(line.id), qty: line.qty }))
     .filter((line) => line.product && line.qty > 0);
 }
@@ -112,15 +134,19 @@ function saveBasket(basket) {
 }
 
 function countBasketItems() {
+   
   return getBasketLines().reduce((total, line) => total + line.qty, 0);
 }
 
 function basketTotal() {
+   
   return getBasketLines().reduce((total, line) => total + line.product.price * line.qty, 0);
 }
 
 function addToBasket(id) {
+   
   const basket = getBasket();
+   
   const existing = basket.find((line) => line.id === id);
   if (existing) {
     existing.qty += 1;
@@ -133,17 +159,21 @@ function addToBasket(id) {
 }
 
 function removeFromBasket(id) {
+   
   const product = findProduct(id);
   saveBasket(getBasket().filter((line) => line.id !== id));
   renderBasket();
   announce(product.name + " removed from your list.");
+   
 }
 
 function changeQty(id, delta) {
+   
   const basket = getBasket();
   const line = basket.find((item) => item.id === id);
   if (!line) {
     return;
+     
   }
   line.qty += delta;
   saveBasket(basket.filter((item) => item.qty > 0));
@@ -168,7 +198,7 @@ function basketAsText() {
 
 /* ---------- Shared header status ---------- */
 
-// Runs on all four pages so the saved list is visible everywhere.
+// Runs all four pages so the saved list is visible everywhere.
 function updateBasketStatus() {
   const count = countBasketItems();
   document.querySelectorAll("[data-basket-status]").forEach((holder) => {
@@ -194,6 +224,7 @@ function buildFilterBar() {
     return;
   }
   CATEGORIES.forEach((category) => {
+     
     const button = document.createElement("button");
     button.type = "button";
     button.className = "filter-btn";
@@ -202,6 +233,7 @@ function buildFilterBar() {
     button.addEventListener("click", () => applyFilter(category.id, true));
     bar.appendChild(button);
     category.button = button;
+     
   });
   applyFilter(readStore(STORAGE_KEYS.filter, "all"), false);
 }
@@ -232,11 +264,13 @@ function buildAddButtons() {
       return;
     }
     const button = document.createElement("button");
+     
     button.type = "button";
     button.className = "add-btn";
     button.textContent = "Add";
     button.setAttribute("aria-label", "Add " + product.name + " to your pre-order list");
     button.addEventListener("click", () => addToBasket(product.id));
+     
     row.appendChild(button);
   });
 }
@@ -262,25 +296,31 @@ function renderBasket() {
   list.className = "basket-list";
 
   lines.forEach((line) => {
+     
     const item = document.createElement("li");
 
     const name = document.createElement("span");
+     
     name.className = "basket-name";
     name.textContent = line.qty + " x " + line.product.name + (line.product.estimate ? " (est.)" : "");
     item.appendChild(name);
 
+     
     const price = document.createElement("span");
     price.className = "price";
     price.textContent = formatMoney(line.product.price * line.qty);
     item.appendChild(price);
 
+     
     item.appendChild(makeQtyButton("−", line.product, -1));
     item.appendChild(makeQtyButton("+", line.product, 1));
 
     const remove = document.createElement("button");
+     
     remove.type = "button";
     remove.className = "link-btn";
     remove.textContent = "Remove";
+     
     remove.setAttribute("aria-label", "Remove " + line.product.name + " from your list");
     remove.addEventListener("click", () => removeFromBasket(line.product.id));
     item.appendChild(remove);
@@ -291,9 +331,11 @@ function renderBasket() {
   panel.appendChild(list);
 
   const total = document.createElement("p");
+   
   total.className = "basket-total";
   total.textContent = "Estimated total: " + formatMoney(basketTotal());
   panel.appendChild(total);
+   
 
   const note = document.createElement("p");
   note.className = "note";
@@ -305,8 +347,10 @@ function renderBasket() {
 
 function makeQtyButton(label, product, delta) {
   const button = document.createElement("button");
+   
   button.type = "button";
   button.className = "qty-btn";
+   
   button.textContent = label;
   button.setAttribute("aria-label", (delta > 0 ? "Add one more " : "Remove one ") + product.name);
   button.addEventListener("click", () => changeQty(product.id, delta));
@@ -329,9 +373,11 @@ function prefillContactForm() {
   const filledFrom = [];
 
   const details = form.querySelector("#item-details");
+   
   const basketText = basketAsText();
   if (details && details.value.trim() === "" && basketText !== "") {
     details.value = basketText;
+     
     filledFrom.push("your saved pre-order list");
   }
 
@@ -501,7 +547,6 @@ function setUpForm() {
       false
     );
   });
-
   const clearPrefill = document.querySelector("[data-clear-prefill]");
   if (clearPrefill) {
     clearPrefill.addEventListener("click", function () {
@@ -519,6 +564,7 @@ function setUpForm() {
 }
 
 /* ---------- Start ---------- */
+
 
 function init() {
   updateBasketStatus();
