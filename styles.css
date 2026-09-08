@@ -4,18 +4,23 @@
 :root {
   --cream: #FBF3E4;
   --crust: #7A2E1D;
+  
   --honey: #C9761F;
   --espresso: #26201B;
 
-  /* Tints of --crust, used only for hairlines and input borders. */
+  /* Tints of crust, used only for hairlines and input borders. */
   --rule-soft: rgba(122, 46, 29, 0.22);
+  
   --rule-firm: rgba(122, 46, 29, 0.40);
+  
 
   --font-heading: Georgia, "Times New Roman", serif;
+  
   --font-body: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
 
   --space: 1rem;
   --radius: 6px;
+  
   --measure: 68ch;
   --shell: 1100px;
 }
@@ -29,8 +34,11 @@
 body {
   margin: 0;
   background-color: var(--cream);
+  
   color: var(--espresso);
+  
   font-family: var(--font-body);
+  
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -54,8 +62,11 @@ body {
 a:focus,
 button:focus,
 input:focus,
+
 textarea:focus {
+  
   outline: 3px solid var(--honey);
+  
   outline-offset: 2px;
 }
 
@@ -84,44 +95,56 @@ video {
 .header-inner {
   display: flex;
   flex-direction: column;
+  
   align-items: center;
+  
   gap: var(--space);
   max-width: var(--shell);
+  
   margin: 0 auto;
   padding: 1.25rem var(--space);
 }
 
 .brand {
+  
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   text-align: center;
+  
 }
 
-/* The supplied logo is a wordmark on a white plate, so it is sized to stay
+/*  supplied logo is wordmark on white plate, it is sized to stay
    legible and given rounded corners to read as a badge on the brown bar. */
 .brand img {
   width: 140px;
+  
 }
 
 .tagline {
+  
   margin: 0;
   font-family: var(--font-heading);
   font-style: italic;
+  
 }
 
 .nav-list {
   display: flex;
   flex-direction: column;
+  
   gap: 0.35rem;
+  
   width: 100%;
+  
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .nav-list a {
+  
   display: block;
   padding: 0.7rem 0.9rem;
   border: 2px solid transparent;
@@ -130,6 +153,7 @@ video {
   font-weight: 600;
   text-align: center;
   text-decoration: none;
+  
 }
 
 .nav-list a:hover {
@@ -146,12 +170,15 @@ video {
 /* ---------- Main content ---------- */
 
 .site-main {
+  
   max-width: var(--shell);
   margin: 0 auto;
   padding: 1.5rem var(--space) 2.5rem;
+  
 }
 
 h1 {
+  
   margin: 0 0 1.25rem;
   padding-bottom: 0.5rem;
   border-bottom: 4px solid var(--honey);
@@ -159,9 +186,11 @@ h1 {
   font-family: var(--font-heading);
   font-size: 1.9rem;
   line-height: 1.2;
+  
 }
 
 h2 {
+  
   margin: 0 0 0.5rem;
   color: var(--crust);
   font-family: var(--font-heading);
@@ -207,7 +236,9 @@ address {
 .card {
   margin-bottom: 1.5rem;
   padding: 1.25rem;
+  
   border: 1px solid var(--rule-soft);
+  
   border-left: 5px solid var(--honey);
   border-radius: var(--radius);
 }
@@ -218,11 +249,15 @@ address {
   margin-top: var(--space);
 }
 
+
+
 /* Photos fill their card or figure instead of stopping at their pixel width,
    and are capped so a tall image cannot push the text off the screen. */
 .card > img,
+
 .card picture img,
 figure img {
+  
   width: 100%;
   max-height: 420px;
   object-fit: cover;
@@ -231,6 +266,7 @@ figure img {
 figure {
   margin: var(--space) 0 0;
   padding: 0.75rem;
+  
   border: 2px solid var(--honey);
   border-radius: var(--radius);
 }
@@ -238,6 +274,7 @@ figure {
 figcaption {
   margin-top: 0.6rem;
   color: var(--crust);
+  
   font-family: var(--font-heading);
   font-style: italic;
 }
@@ -250,11 +287,14 @@ video {
 /* ---------- Lists ---------- */
 
 .known-for,
+
 .price-list,
 .hours-list {
   display: flex;
+  
   flex-direction: column;
   gap: 0.6rem;
+  
   margin: var(--space) 0 0;
   padding: 0;
   list-style: none;
@@ -262,6 +302,7 @@ video {
 
 .known-for > li,
 .price-list > li,
+
 .hours-list > li {
   padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--rule-soft);
@@ -269,8 +310,11 @@ video {
 
 /* Item on the left, price on the right, so the case is scannable. */
 .price-list > li {
+  
   display: flex;
+  
   flex-wrap: wrap;
+  
   justify-content: space-between;
   gap: 0.5rem 1rem;
 }
@@ -289,9 +333,11 @@ video {
 /* ---------- Multi-column blocks ---------- */
 
 .category-grid,
+
 .info-columns {
   display: flex;
   flex-direction: column;
+  
   gap: 1.5rem;
 }
 
@@ -334,9 +380,11 @@ input[type="date"],
 textarea {
   width: 100%;
   max-width: 30rem;
+  
   padding: 0.6rem;
   border: 2px solid var(--rule-firm);
   border-radius: var(--radius);
+  
   background-color: var(--cream);
   color: var(--espresso);
   font: inherit;
@@ -353,8 +401,10 @@ textarea:focus {
 
 /* Radio and its label sit on one line; the label is not bolded. */
 .radio-row {
+  
   display: flex;
   align-items: center;
+  
   gap: 0.5rem;
   margin: 0 0 0.5rem;
 }
@@ -372,14 +422,18 @@ textarea:focus {
 
 button {
   padding: 0.75rem 1.25rem;
+  
   border-radius: var(--radius);
+  
   font: inherit;
   font-weight: 700;
+  
   cursor: pointer;
 }
 
 .btn-primary {
   border: 2px solid var(--honey);
+  
   background-color: var(--honey);
   color: var(--espresso);
 }
@@ -478,15 +532,18 @@ button {
   .info-columns > .card {
     flex: 1 1 300px;
   }
+  
 
   .known-for {
     flex-direction: row;
     flex-wrap: wrap;
+    
   }
 
   .known-for > li {
     flex: 1 1 220px;
     padding: 0 0 0 0.75rem;
+    
     border-bottom: none;
     border-left: 3px solid var(--honey);
   }
