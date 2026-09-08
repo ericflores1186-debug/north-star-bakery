@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>North Star Bakery | Handmade Breads, Pastries, and Cakes</title>
+  <meta name="description" content="North Star Bakery is a neighborhood bakery on Bell Street baking handmade breads, pastries, and cakes for daily pickup and pre-order.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Lets keyboard users jump past the nav -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="bakery-logo_c.png" alt="North Star Bakery logo: a line drawing of a loaf filled with wheat stalks, above the words North Star Bakery" width="1667" height="1423">
+        <p class="tagline">Handmade daily on Bell Street since 1998</p>
+      </div>
+
+      <!-- Same navigation on all four pages, relative paths -->
+      <nav aria-label="Main">
+        <ul class="nav-list">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="products.html">Breads, Pastries &amp; Cakes</a></li>
+          <li><a href="about.html">About Our Bakery</a></li>
+          <li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main" id="main-content">
+    <h1>Welcome to North Star Bakery</h1>
+    <p class="lead">We are a small neighborhood bakery two blocks from the Bell Street bus stop. Every loaf is mixed, shaped, and baked by hand in the shop you walk into, and the case is stocked fresh each morning for commuters, families, and anyone who needs a cake for Saturday.</p>
+
+    <section class="card">
+      <h2>What We Are Known For</h2>
+      <p>Neighbors come back for three things, and we bake all of them every day we are open.</p>
+      <ul class="known-for">
+        <li><strong>Slow-fermented sourdough</strong> rested a full 24 hours before it ever sees the oven.</li>
+        <li><strong>Butter pastries</strong> laminated by hand each morning, out of the oven by 7:00 a.m.</li>
+        <li><strong>Celebration cakes</strong> decorated to order for birthdays, showers, and block parties.</li>
+      </ul>
+      <img src="bakery-bread_c.png" alt="Artisan loaves in the bakery display case, with a dark scored sourdough in front" width="1200" height="1200">
+    </section>
+
+    <section class="card">
+      <h2>Featured Item of the Week</h2>
+      <h3>Baker's Dozen Pastry Box</h3>
+      <!-- Responsive image: square crop on phones, wide crop on larger screens -->
+      <picture>
+        <source media="(min-width: 768px)" srcset="bakery-feature-large_c.png">
+        <img src="bakery-feature-small_c.png" alt="Bakery case shelves filled with an assortment of cookies, danishes, and sweet buns" width="1200" height="1200">
+      </picture>
+      <p>Thirteen pastries picked from whatever is best in the case that morning: croissants, danishes, hand pies, and a few of the baker's own experiments. Featured through Sunday at $42.00 a box, and we will pack it for a set pickup time if you pre-order.</p>
+      <p><a href="products.html">See every category and price range on our products page</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>A Welcome From Our Head Baker</h2>
+      <p>Bea recorded a short hello for anyone visiting us for the first time.</p>
+      <div class="media-block">
+        <audio controls>
+          <source src="bakery-welcome_c.mp3" type="audio/mpeg">
+          Your browser does not support the audio element. <a href="bakery-welcome_c.mp3">Download the welcome message (MP3)</a> to hear head baker Bea Alvarez describe our daily bake schedule and how pre-orders work.
+        </audio>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Hours and Location</h2>
+      <address>
+        North Star Bakery<br>
+        412 Bell Street<br>
+        Minneapolis, MN 55414<br>
+        Phone: <a href="tel:+16125550147">612-555-0147</a>
+      </address>
+      <ul class="hours-list">
+        <li>Tuesday to Friday: 6:30 a.m. to 6:00 p.m.</li>
+        <li>Saturday: 7:00 a.m. to 4:00 p.m.</li>
+        <li>Sunday: 7:00 a.m. to 1:00 p.m.</li>
+        <li>Monday: closed for milling and prep</li>
+      </ul>
+      <p class="note"><a href="contact.html">Start a pre-order request for pickup</a>.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>North Star Bakery, 412 Bell Street, Minneapolis, MN 55414. Phone: <a href="tel:+16125550147">612-555-0147</a></p>
+      <p>&copy; 2026 North Star Bakery. Baked by hand, shared with neighbors.</p>
+    </div>
+  </footer>
+</body>
+</html>
