@@ -7,6 +7,7 @@
   
   <meta name="description" content="The story behind North Star Bakery, how we source flour and butter from Minnesota growers, and the bakers behind the counter.">
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -32,8 +33,16 @@
           
         </ul>
       </nav>
+
+      <!-- Shows the saved pre-order list on every page -->
+      <p class="basket-status" data-basket-status hidden>
+        <a href="products.html#pre-order-list"><span data-basket-count>0 items</span> saved in your pre-order list</a>
+      </p>
     </div>
   </header>
+
+  <!-- Screen-reader announcements for list changes -->
+  <p class="visually-hidden" role="status" aria-live="polite" data-live-region></p>
 
   <main class="site-main" id="main-content">
     <h1>About North Star Bakery</h1>

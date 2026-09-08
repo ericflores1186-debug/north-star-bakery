@@ -6,6 +6,7 @@
   <title>Our Products | North Star Bakery</title>
   <meta name="description" content="Browse North Star Bakery product categories and price ranges for breads, pastries, and celebration cakes. Reserve items by pre-order or in the shop.">
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -26,8 +27,16 @@
           <li><a href="contact.html">Contact &amp; Pre-Orders</a></li>
         </ul>
       </nav>
+
+      <!-- Shows the saved pre-order list on every page -->
+      <p class="basket-status" data-basket-status hidden>
+        <a href="products.html#pre-order-list"><span data-basket-count>0 items</span> saved in your pre-order list</a>
+      </p>
     </div>
   </header>
+
+  <!-- Screen-reader announcements for list changes -->
+  <p class="visually-hidden" role="status" aria-live="polite" data-live-region></p>
 
   <main class="site-main" id="main-content">
     <h1>Breads, Pastries, and Cakes</h1>
@@ -44,50 +53,67 @@
       </figure>
     </section>
 
+    <!-- Filter buttons are built by scripts.js from the CATEGORIES array -->
+    <section class="card">
+      <h2>Browse the Counter</h2>
+      <p class="note">Pick a category to narrow the list. Your choice is remembered on this device.</p>
+      <div class="filter-bar" data-filter-bar role="group" aria-label="Filter products by category"></div>
+    </section>
+
     <!-- Three categories stack on phones and sit side by side on wider screens -->
     <div class="category-grid">
-      <section class="card">
+      <section class="card" data-category-section="breads">
         <h2>Breads</h2>
         <p>Every loaf is mixed the afternoon before, rested overnight, and baked in the morning. Whole loaves only, sliced free on request.</p>
 
         <h3>Loaves and Price Range</h3>
         <ul class="price-list">
-          <li><span>Signature North Star Loaf, 2 lb round</span> <span class="price">$8.00</span></li>
-          <li><span>Country white sandwich pan loaf</span> <span class="price">$6.50</span></li>
-          <li><span>Seeded rye and caraway</span> <span class="price">$7.25</span></li>
-          <li><span>Honey oat sandwich loaf</span> <span class="price">$6.75</span></li>
-          <li><span>Half loaves of any bread above</span> <span class="price">$3.50 to $4.50</span></li>
+          <li data-product-id="sig-loaf"><span class="item-name">Signature North Star Loaf, 2 lb round</span> <span class="price">$8.00</span></li>
+          <li data-product-id="country-white"><span class="item-name">Country white sandwich pan loaf</span> <span class="price">$6.50</span></li>
+          <li data-product-id="seeded-rye"><span class="item-name">Seeded rye and caraway</span> <span class="price">$7.25</span></li>
+          <li data-product-id="honey-oat"><span class="item-name">Honey oat sandwich loaf</span> <span class="price">$6.75</span></li>
+          <li data-product-id="half-loaf"><span class="item-name">Half loaves of any bread above</span> <span class="price">$3.50 to $4.50</span></li>
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card" data-category-section="pastries">
         <h2>Pastries</h2>
         <p>Laminated by hand each morning and out of the oven by 7:00 a.m. Commuters, we set aside pre-orders at the front counter so you are not waiting in line.</p>
 
         <h3>Morning Case Price Range</h3>
         <ul class="price-list">
-          <li><span>Butter croissant</span> <span class="price">$3.75</span></li>
-          <li><span>Almond or chocolate croissant</span> <span class="price">$4.50</span></li>
-          <li><span>Maple pecan morning bun</span> <span class="price">$4.25</span></li>
-          <li><span>Seasonal fruit hand pie</span> <span class="price">$4.00</span></li>
-          <li><span>Baker's dozen pastry box, featured this week</span> <span class="price">$42.00</span></li>
+          <li data-product-id="croissant"><span class="item-name">Butter croissant</span> <span class="price">$3.75</span></li>
+          <li data-product-id="almond-croissant"><span class="item-name">Almond or chocolate croissant</span> <span class="price">$4.50</span></li>
+          <li data-product-id="morning-bun"><span class="item-name">Maple pecan morning bun</span> <span class="price">$4.25</span></li>
+          <li data-product-id="hand-pie"><span class="item-name">Seasonal fruit hand pie</span> <span class="price">$4.00</span></li>
+          <li data-product-id="pastry-box"><span class="item-name">Baker's dozen pastry box, featured this week</span> <span class="price">$42.00</span></li>
         </ul>
       </section>
 
-      <section class="card">
+      <section class="card" data-category-section="cakes">
         <h2>Cakes</h2>
         <p>Celebration cakes are made to order and need at least 48 hours' notice. Tell us the occasion in the item details field and we will follow up with flavor and decorating options.</p>
 
         <h3>Made-to-Order Price Range</h3>
         <ul class="price-list">
-          <li><span>6 inch round, serves 6 to 8</span> <span class="price">$32.00 to $40.00</span></li>
-          <li><span>8 inch round, serves 12 to 16</span> <span class="price">$48.00 to $60.00</span></li>
-          <li><span>Quarter sheet, serves 20 to 24</span> <span class="price">$65.00 to $85.00</span></li>
-          <li><span>Cupcakes, by the dozen</span> <span class="price">$30.00 to $38.00</span></li>
+          <li data-product-id="cake-6"><span class="item-name">6 inch round, serves 6 to 8</span> <span class="price">$32.00 to $40.00</span></li>
+          <li data-product-id="cake-8"><span class="item-name">8 inch round, serves 12 to 16</span> <span class="price">$48.00 to $60.00</span></li>
+          <li data-product-id="cake-sheet"><span class="item-name">Quarter sheet, serves 20 to 24</span> <span class="price">$65.00 to $85.00</span></li>
+          <li data-product-id="cupcakes"><span class="item-name">Cupcakes, by the dozen</span> <span class="price">$30.00 to $38.00</span></li>
         </ul>
         <p class="note"><a href="contact.html">Request a custom cake consultation</a> and we will call you back within one business day.</p>
       </section>
     </div>
+
+    <!-- Contents are rendered by scripts.js from the list saved in localStorage -->
+    <section class="card" id="pre-order-list">
+      <h2>Your Pre-Order List</h2>
+      <div data-basket-panel></div>
+      <p class="form-actions" data-basket-actions hidden>
+        <a class="btn-link" href="contact.html">Send this list as a pre-order request</a>
+        <button class="btn-secondary" type="button" data-clear-basket>Clear list</button>
+      </p>
+    </section>
   </main>
 
   <footer class="site-footer">
