@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact and Pre-Orders | North Star Bakery</title>
+
   
   <meta name="description" content="Send a pre-order request or a general question to North Star Bakery, and find our Bell Street location and hours of operation.">
   <link rel="stylesheet" href="styles.css">
   
   <script src="scripts.js" defer></script>
+
   
 </head>
 
@@ -26,6 +27,7 @@
         <p class="tagline">Handmade daily on Bell Street since 1998</p>
       </div>
   <nav aria-label="Main">
+    
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="products.html">Breads, Pastries &amp; Cakes</a></li>
@@ -54,6 +56,7 @@
 
   <main class="site-main" id="main-content">
     <h1>Contact Us and Request a Pre-Order</h1>
+
     
     <p class="lead">Use the form below to reserve items for pickup or to ask a question. We reply within one business day. Cakes and large orders need at least 48 hours' notice. Payment happens at the counter when you pick up, so there is nothing to check out online.</p>
 
@@ -63,6 +66,7 @@
 
       <!-- JS validation lives in scripts.js. The HTML attributes stay as the no-JS fallback. -->
       <form action="#" method="post" data-contact-form>
+
         
         <p class="prefill-notice" data-prefill-notice hidden>
           <span data-prefill-text></span>
@@ -74,10 +78,12 @@
 
         <!-- Fieldsets group related inputs so the purpose of each block is announced -->
         <fieldset>
+          
           <legend>Your Contact Information</legend>
           
           <p class="field">
             <label for="full-name">Full name (required)</label>
+            
             <input type="text" id="full-name" name="full-name" autocomplete="name" maxlength="80" required aria-describedby="full-name-error">
             <span class="field-error" id="full-name-error" role="alert"></span>
             
@@ -85,6 +91,7 @@
           <p class="field">
             
             <label for="email">Email address (required)</label>
+            
             <input type="email" id="email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="email-error">
             <span class="field-error" id="email-error" role="alert"></span>
             
@@ -92,6 +99,7 @@
           <p class="field">
             
             <label for="phone">Phone number (optional, for cake and large orders)</label>
+            
             <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Enter a 10-digit phone number in the format 612-555-0147" aria-describedby="phone-error">
             <span class="field-error" id="phone-error" role="alert"></span>
             
@@ -100,6 +108,7 @@
 
         <fieldset>
           <legend>Request Details</legend>
+          
 
           <!-- Nested fieldset keeps the radio group labeled as one question -->
           <fieldset>
@@ -107,6 +116,7 @@
             <p class="radio-row">
               
               <input type="radio" id="type-preorder" name="request-type" value="pre-order" required>
+              
               <label for="type-preorder">Pre-order for pickup</label>
             </p>
             
@@ -117,23 +127,21 @@
             </p>
             <p class="radio-row">
               
-              <input type="radio" id="type-event" name="request-type" value="event">
               
-              <label for="type-event">Event or large group order</label>
-            </p>
-            <p class="radio-row">
+     <input type="radio" id="type-event" name="request-type" value="event">
               
-              <input type="radio" id="type-question" name="request-type" value="question">
-              <label for="type-question">General question</label>
-              
-            </p>
-            <span class="field-error" id="request-type-error" role="alert"></span>
-          </fieldset>
-
-          <p class="field">
+     <label for="type-event">Event or large group order</label>
+      </p>
+     <p class="radio-row">   
+     <input type="radio" id="type-question" name="request-type" value="question">
+    <label for="type-question">General question</label>
+                </p>
+   <span class="field-error" id="request-type-error" role="alert"></span>
+   </fieldset>
+  <p class="field">
             <label for="pickup-date">Preferred pickup date (required)</label>
             
-            <input type="date" id="pickup-date" name="pickup-date" min="2026-09-08" required aria-describedby="pickup-date-error">
+  <input type="date" id="pickup-date" name="pickup-date" min="2026-09-08" required aria-describedby="pickup-date-error">
             <span class="field-error" id="pickup-date-error" role="alert"></span>
 
 
@@ -145,13 +153,16 @@
             
             <textarea id="item-details" name="item-details" rows="5" cols="45" minlength="10" maxlength="600" required aria-describedby="item-details-error"></textarea>
             <span class="field-error" id="item-details-error" role="alert"></span>
+            
           </p>
         </fieldset>
 
         <fieldset>
           <legend>Allergy and Dietary Notes</legend>
           <p class="field">
+            
             <label for="allergy-notes">Allergy notes, if applicable (optional)</label>
+            
             <textarea id="allergy-notes" name="allergy-notes" rows="3" cols="45" maxlength="300"></textarea>
           </p>
           
@@ -161,8 +172,10 @@
 
         
         <p class="form-actions">
+          
           <button class="btn-primary" type="submit">Send Pre-Order Request</button>
           <button class="btn-secondary" type="reset">Clear Form</button>
+          
         </p>
       </form>
     </section>
@@ -171,6 +184,7 @@
     <div class="info-columns">
       <section class="card">
         <h2>Visit the Bakery</h2>
+
         
         <address>
           North Star Bakery<br>
@@ -184,6 +198,7 @@
    </section>
 
    <section class="card">
+     
     <h2>Hours of Operation</h2>
      <ul class="hours-list">
           
