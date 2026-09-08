@@ -1,5 +1,6 @@
 /* North Star Bakery - Touchstone 3 stylesheet. Mobile-first. */
 
+
 /* Palette: 4 colors, 2 font families. */
 :root {
   --cream: #FBF3E4;
@@ -8,6 +9,8 @@
   --honey: #C9761F;
   --espresso: #26201B;
 
+
+  
   /* Tints of crust, used only for hairlines and input borders. */
   --rule-soft: rgba(122, 46, 29, 0.22);
   
@@ -23,7 +26,9 @@
   
   --measure: 68ch;
   --shell: 1100px;
+  
 }
+
 
 *,
 *::before,
@@ -44,12 +49,16 @@ body {
 }
 
 /* Visible only when tabbed to. */
+
 .skip-link {
+  
   position: absolute;
   left: -9999px;
   top: 0;
+  
   padding: 0.75rem 1rem;
   background-color: var(--honey);
+  
   color: var(--espresso);
   font-weight: 700;
 }
@@ -73,6 +82,7 @@ textarea:focus {
 /* Honey is invisible on the brown bar, so focus flips to cream there. */
 .site-header a:focus,
 .site-footer a:focus {
+  
   outline-color: var(--cream);
 }
 
@@ -80,6 +90,7 @@ img,
 video {
   display: block;
   max-width: 100%;
+  
   height: auto;
   border-radius: var(--radius);
 }
@@ -95,19 +106,14 @@ video {
 .header-inner {
   display: flex;
   flex-direction: column;
-  
   align-items: center;
-  
   gap: var(--space);
   max-width: var(--shell);
-  
   margin: 0 auto;
   padding: 1.25rem var(--space);
 }
 
-.brand {
-  
-  display: flex;
+.brand { display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
@@ -178,6 +184,7 @@ video {
 }
 
 h1 {
+
   
   margin: 0 0 1.25rem;
   padding-bottom: 0.5rem;
@@ -251,8 +258,8 @@ address {
 
 
 
-/* Photos fill their card or figure instead of stopping at their pixel width,
-   and are capped so a tall image cannot push the text off the screen. */
+/* Photos fill card or figure instead of stopping at pixel width,
+   and  capped so a tall image cannot push the text off the screen. */
 .card > img,
 
 .card picture img,
@@ -510,7 +517,9 @@ button {
     padding: 2rem 1.5rem 3rem;
   }
 
+  
   h1 {
+    
     font-size: 2.4rem;
   }
 
@@ -740,6 +749,7 @@ button {
 }
 
 .status-ok {
+  
   border: 2px solid var(--honey);
   background-color: var(--honey);
   color: var(--espresso);
